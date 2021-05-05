@@ -3,4 +3,6 @@
 # x would be for showing the commands before they are executed
 set -eux
 
+echo $INPUT_HEAD_REF
+echo $INPUT_REF
 git log --oneline --decorate $INPUT_HEAD_REF..$INPUT_REF --format=%B -n 1
