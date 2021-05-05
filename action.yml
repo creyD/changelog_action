@@ -12,7 +12,7 @@ runs:
         ${{ github.action_path }}/entrypoint.sh
       env:
         INPUT_HEAD_REF: ${{ github.head_ref }}
-        INPUT_REF: ${{ github.ref }}
+        INPUT_BASE_REF: ${{ github.base_ref }}
 
 branding:
   icon: "activity"
