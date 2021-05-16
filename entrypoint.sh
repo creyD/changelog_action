@@ -5,4 +5,5 @@ set -eux
 
 cd "$GITHUB_ACTION_PATH"
 
-git log --oneline --decorate $INPUT_BASE_REF..$INPUT_HEAD_REF --format=%B -n 1
+CONTENT=$(git log --oneline --decorate $INPUT_BASE_REF..$INPUT_HEAD_REF --format=%B -n 1)
+echo ::set-output name=changelog::$CONTENT
