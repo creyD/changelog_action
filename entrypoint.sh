@@ -4,9 +4,5 @@
 set -eux
 
 cd "$GITHUB_ACTION_PATH"
-ls -la
-cd .. 
-ls -la
-cd master
 CONTENT=$(git log --oneline --decorate $INPUT_BASE_REF..$INPUT_HEAD_REF --format=%B -n 1)
 echo ::set-output name=changelog::$CONTENT
