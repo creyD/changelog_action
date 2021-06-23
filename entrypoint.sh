@@ -3,6 +3,6 @@
 # x would be for showing the commands before they are executed
 set -eux
 
-cd "$GITHUB_ACTION_PATH"
+cd "$$GITHUB_WORKSPACE"
 CONTENT=$(git log --oneline --decorate $INPUT_BASE_REF..$INPUT_HEAD_REF --format=%B -n 1)
 echo ::set-output name=changelog::$CONTENT
